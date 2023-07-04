@@ -9,6 +9,11 @@ import Foundation
 
 struct PokemonModel: Codable {
     let id: Int
-    let height: Int
-    let weight: Int
+    let attack: Int
+    let defense: Int
+    let description: String
+    let name: String
+    let imageUrl: String
+    let type: String
 }
+
