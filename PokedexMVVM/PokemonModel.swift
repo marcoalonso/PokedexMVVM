@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonModel: Codable {
+struct PokemonModel: Codable, Hashable {
     let id: Int
     let attack: Int
     let defense: Int

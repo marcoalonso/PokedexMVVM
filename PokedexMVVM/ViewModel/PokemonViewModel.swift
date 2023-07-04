@@ -12,6 +12,7 @@ import SwiftUI
 class PokemonViewModel: ObservableObject {
     @Published var pokemonList = [PokemonModel]()
     @Published var alertItem: AlertItem?
+    var colors: [Color] = [.red, .gray, .green, .yellow, .blue, .pink, .brown]
     
     init() {
         getListPokemon()
