@@ -10,9 +10,33 @@ import SwiftUI
 struct PokemonDetailView: View {
     let pokemon: PokemonModel
     var body: some View {
-        VStack {
+        VStack(spacing: 20.0) {
             PokemonRemoteImage(urlString: pokemon.imageUrl)
-        }
+                .frame(maxHeight: 300)
+            
+            Text(pokemon.description)
+                .font(.system(size: 28))
+                .lineLimit(4)
+            
+            VStack(spacing: 20.0) {
+                Text("Type: \(pokemon.type)")
+                    .font(.title2)
+                
+                HStack(spacing: 15.0) {
+                    Text("Attack: \(pokemon.attack)")
+                        .foregroundColor(.red)
+                        
+                    
+                    Text("Defense: \(pokemon.defense)")
+                        .foregroundColor(.green)
+                }
+                .font(.title2)
+                .bold()
+            }
+            
+            Spacer()
+        }.padding(15)
+            .navigationTitle(pokemon.name)
     }
 }
 

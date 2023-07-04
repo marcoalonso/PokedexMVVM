@@ -15,14 +15,15 @@ struct PokedexListView: View {
         NavigationStack {
             VStack {
                 List(viewModel.pokemonList, id: \.id) { pokemon in
-                    HStack(spacing: 20.0) {
-                        PokemonRemoteImage(urlString: pokemon.imageUrl)
-                            .frame(width: 80, height: 80)
-                            .shadow(radius: 12)
-                        
-                        Text(pokemon.name)
-                            .font(.title)
-                        
+                    NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
+                        HStack(spacing: 20.0) {
+                            PokemonRemoteImage(urlString: pokemon.imageUrl)
+                                .frame(width: 80, height: 80)
+                                .shadow(radius: 12)
+                            
+                            Text(pokemon.name)
+                                .font(.title)
+                        }
                     }
                 }
             }

@@ -29,7 +29,12 @@ struct RemoteImage: View {
     var image: Image?
     
     var body: some View {
-        image?.resizable() ?? Image("pokemon").resizable()
+        if let image = image {
+            image.resizable()
+        } else {
+            Image(systemName: "pokemon").resizable()
+        }
+        
     }
 }
 
