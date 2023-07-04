@@ -94,3 +94,8 @@ extension Data {
         return data
     }
 }
+
+
+struct MockData {
+    static let pokemon = PokemonModel(id: 123, attack: 99, defense: 99, description: "Almost incapable of moving, this POKéMON can only fharden its shell to protect itself from predators.", name: "Eve", imageUrl: "https://firebasestorage.googleapis.com/v0/b/pokedex-bb36f.appspot.com/o/pokemon_images%2F2CF15848-AAF9-49C0-90E4-28DC78F60A78?alt=media&token=15ecd49b-89ff-46d6-be0f-1812c948e334", type: "poison")
+}
