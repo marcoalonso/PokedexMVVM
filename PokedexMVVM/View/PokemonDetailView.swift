@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PokemonDetailView: View {
+    @State private var isAnimating = false
     
     let pokemon: PokemonModel
     
@@ -15,7 +16,10 @@ struct PokemonDetailView: View {
         VStack(spacing: 20.0) {
             PokemonRemoteImage(urlString: pokemon.imageUrl)
                 .shadow(radius: 12)
-                .frame(maxHeight: 300)
+                .frame(maxHeight: 250)
+                .padding(10)
+                .scaleEffect(isAnimating ? 1.2 : 0.7)
+            
             
             Text(pokemon.description)
                 .font(.system(size: 28))
@@ -28,7 +32,7 @@ struct PokemonDetailView: View {
                 HStack(spacing: 15.0) {
                     Text("Attack: \(pokemon.attack)")
                         .foregroundColor(.red)
-                        
+                    
                     
                     Text("Defense: \(pokemon.defense)")
                         .foregroundColor(.green)
@@ -36,10 +40,16 @@ struct PokemonDetailView: View {
                 .font(.title2)
                 .bold()
             }
-            
-            Spacer()
-        }.padding(15)
-            .navigationTitle(pokemon.name)
+                    }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                withAnimation {
+                    isAnimating = true
+                }
+            }
+        }
+        .padding(15)
+        .navigationTitle(pokemon.name)
     }
 }
 

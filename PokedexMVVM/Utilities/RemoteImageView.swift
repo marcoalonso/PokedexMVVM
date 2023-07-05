@@ -31,6 +31,7 @@ struct RemoteImage: View {
     var body: some View {
         if let image = image {
             image.resizable()
+                .aspectRatio(contentMode: .fit)
         } else {
             Image(systemName: "pokemon").resizable()
         }

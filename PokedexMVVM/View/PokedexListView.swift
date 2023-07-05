@@ -21,7 +21,7 @@ struct PokedexListView: View {
         NavigationStack {
             ScrollView {
                 LazyVGrid(columns: numberOfColumns, spacing: 10) {
-                    ForEach(viewModel.pokemonList, id: \.self) { pokemon in
+                    ForEach(viewModel.fileterdPokemon, id: \.self) { pokemon in
                         NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
                             PokemonCellView(pokemon: pokemon, viewModel: viewModel)//Stack
                         }
@@ -29,8 +29,10 @@ struct PokedexListView: View {
                 }.padding(20)
             }//Scroll
             .searchable(text: $pokemonToSearch, prompt: "Search pokemon")
-            .onChange(of: pokemonToSearch, perform: { newValue in
-                //TODO: -
+            .onChange(of: pokemonToSearch, perform: { namePokemon in
+                withAnimation {
+                    viewModel.filerPokemon(name: namePokemon)
+                }
             })
             .navigationBarTitle("Pokedex", displayMode: .inline)
         }

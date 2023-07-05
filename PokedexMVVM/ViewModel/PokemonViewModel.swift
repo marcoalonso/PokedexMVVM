@@ -10,7 +10,8 @@ import SwiftUI
 
 
 class PokemonViewModel: ObservableObject {
-    @Published var pokemonList = [PokemonModel]()
+    @Published var listPokemon = [PokemonModel]()
+    @Published var fileterdPokemon = [PokemonModel]()
     @Published var alertItem: AlertItem?
     var colors: [Color] = [.red, .gray, .green, .yellow, .blue, .pink, .brown]
     
@@ -25,7 +26,8 @@ class PokemonViewModel: ObservableObject {
                 switch result {
                 case .success(let listPokemon):
                     print("Debug: listPokemon \(listPokemon.count)")
-                    self.pokemonList = listPokemon
+                    self.listPokemon = listPokemon
+                    self.fileterdPokemon = listPokemon
                 case .failure(let error):
                     switch error {
                     case .invalidURL:
@@ -74,6 +76,16 @@ class PokemonViewModel: ObservableObject {
             return .teal
         default:
             return .white
+        }
+    }
+    
+    func filerPokemon(name: String) {
+        if name.isEmpty {
+            fileterdPokemon = listPokemon
+        } else {
+            fileterdPokemon = listPokemon.filter({ pokemon in
+                pokemon.name.lowercased().contains(name.lowercased())
+            })
         }
     }
     
