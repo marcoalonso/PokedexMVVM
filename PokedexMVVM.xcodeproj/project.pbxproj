@@ -17,6 +17,7 @@
 		6C633F992A54DCCF0025B7C4 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C633F982A54DCCF0025B7C4 /* AlertItem.swift */; };
 		6C633F9E2A54DF860025B7C4 /* PokemonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C633F9D2A54DF860025B7C4 /* PokemonDetailView.swift */; };
 		6C633FA02A54E0320025B7C4 /* RemoteImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C633F9F2A54E0320025B7C4 /* RemoteImageView.swift */; };
+		6C633FA22A54EDBD0025B7C4 /* PokemonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C633FA12A54EDBD0025B7C4 /* PokemonCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		6C633F982A54DCCF0025B7C4 /* AlertItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertItem.swift; sourceTree = "<group>"; };
 		6C633F9D2A54DF860025B7C4 /* PokemonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailView.swift; sourceTree = "<group>"; };
 		6C633F9F2A54E0320025B7C4 /* RemoteImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImageView.swift; sourceTree = "<group>"; };
+		6C633FA12A54EDBD0025B7C4 /* PokemonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				6C067DB02A38BF060014FDD8 /* PokedexListView.swift */,
 				6C633F9D2A54DF860025B7C4 /* PokemonDetailView.swift */,
+				6C633FA12A54EDBD0025B7C4 /* PokemonCellView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C633FA22A54EDBD0025B7C4 /* PokemonCellView.swift in Sources */,
 				6C633F972A54D9F20025B7C4 /* NetworkManager.swift in Sources */,
 				6C633F992A54DCCF0025B7C4 /* AlertItem.swift in Sources */,
 				6C633FA02A54E0320025B7C4 /* RemoteImageView.swift in Sources */,

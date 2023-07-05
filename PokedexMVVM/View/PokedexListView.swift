@@ -23,22 +23,7 @@ struct PokedexListView: View {
                 LazyVGrid(columns: numberOfColumns, spacing: 10) {
                     ForEach(viewModel.pokemonList, id: \.self) { pokemon in
                         NavigationLink(destination: PokemonDetailView(pokemon: pokemon)) {
-                            ZStack {
-                                Rectangle()
-                                //.frame(maxWidth: .infinity, maxHeight: .infinity)
-                                    
-                                    .foregroundColor(viewModel.colors[Int.random(in: 0..<viewModel.colors.count)])
-                                    .cornerRadius(25)
-                                VStack {
-                                    PokemonRemoteImage(urlString: pokemon.imageUrl)
-                                        .frame(width: 100, height: 100)
-                                    
-                                    Text(pokemon.name)
-                                        .font(.body)
-                                        .foregroundColor(.white)
-                                }
-                            }//Stack
-                            
+                            PokemonCellView(pokemon: pokemon, viewModel: viewModel)//Stack
                         }
                     }
                 }.padding(20)
@@ -50,6 +35,8 @@ struct PokedexListView: View {
             .navigationBarTitle("Pokedex", displayMode: .inline)
         }
     }
+    
+   
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -57,3 +44,5 @@ struct ContentView_Previews: PreviewProvider {
         PokedexListView()
     }
 }
+
+

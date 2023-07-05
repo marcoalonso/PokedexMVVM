@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct PokemonDetailView: View {
+    
     let pokemon: PokemonModel
+    
     var body: some View {
         VStack(spacing: 20.0) {
             PokemonRemoteImage(urlString: pokemon.imageUrl)
+                .shadow(radius: 12)
                 .frame(maxHeight: 300)
             
             Text(pokemon.description)
